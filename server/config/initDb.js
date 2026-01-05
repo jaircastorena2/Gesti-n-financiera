@@ -1,13 +1,6 @@
 const pool = require('./db');
 
 const initDatabase = async () => {
-    console.log('📊 Attempting database connection...');
-    console.log('📊 DB_HOST:', process.env.DB_HOST || 'not set');
-    console.log('📊 DB_PORT:', process.env.DB_PORT || 'not set');
-    console.log('📊 DB_NAME:', process.env.DB_NAME || 'not set');
-    console.log('📊 DB_USER:', process.env.DB_USER || 'not set');
-    console.log('📊 DB_PASSWORD:', process.env.DB_PASSWORD ? '***set***' : 'not set');
-
     try {
         // Test connection first
         const connection = await pool.getConnection();
@@ -69,8 +62,7 @@ const initDatabase = async () => {
 
         console.log('✅ Database initialized successfully');
     } catch (error) {
-        console.error('❌ Error initializing database:', error.code, error.message);
-        console.error('❌ Full error:', error);
+        console.error('❌ Error initializing database:', error.message);
     }
 };
 
