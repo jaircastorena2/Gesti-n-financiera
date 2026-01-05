@@ -383,8 +383,8 @@ const Main = styled.main`
     transition: all 0.3s ease;
     @media (max-width: 1024px) { 
         margin-left: 0; 
-        padding: 20px; 
-        padding-bottom: 100px; /* Space for mobile nav */
+        padding: 12px; 
+        padding-bottom: 90px; /* Space for mobile nav */
     }
 `;
 

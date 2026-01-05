@@ -35,7 +35,11 @@ const StatsRow = styled.div`
     gap: 20px;
     margin-bottom: 28px;
     @media (max-width: 1200px) { grid-template-columns: repeat(2, 1fr); }
-    @media (max-width: 640px) { grid-template-columns: 1fr; }
+    @media (max-width: 640px) { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px;
+        margin-bottom: 16px;
+    }
 `;
 
 const StatCard = styled.div`
