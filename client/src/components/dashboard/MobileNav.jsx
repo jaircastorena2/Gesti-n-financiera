@@ -37,37 +37,50 @@ const MobileNavWrapper = styled.nav`
     bottom: 0;
     left: 0;
     right: 0;
+    width: 100%;
+    max-width: 100vw;
     background: var(--sidebar);
     border-top: 1px solid var(--border);
-    padding: 8px 12px;
-    padding-bottom: env(safe-area-inset-bottom, 8px);
+    padding: 6px 0;
+    padding-bottom: env(safe-area-inset-bottom, 6px);
     z-index: 1000;
-    justify-content: space-around;
-    align-items: center;
 
     @media (max-width: 1024px) {
         display: flex;
+        justify-content: space-evenly;
+        align-items: center;
     }
 
     .nav-btn {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 4px;
-        padding: 8px 12px;
-        border-radius: 10px;
+        justify-content: center;
+        gap: 2px;
+        padding: 6px 8px;
+        min-width: 0;
+        flex: 1;
+        max-width: 70px;
+        border-radius: 8px;
         background: transparent;
         border: none;
         color: rgba(255,255,255,0.5);
-        font-size: 10px;
+        font-size: 9px;
         font-weight: 500;
         cursor: pointer;
         transition: all 0.2s;
 
         svg {
-            width: 22px;
-            height: 22px;
+            width: 20px;
+            height: 20px;
             fill: currentColor;
+            flex-shrink: 0;
+        }
+
+        span {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         &:hover {

@@ -374,6 +374,9 @@ const DashboardWrapper = styled.div`
     min-height: 100vh;
     background: var(--bg);
     transition: background 0.3s ease;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
 `;
 
 const Main = styled.main`
@@ -381,10 +384,14 @@ const Main = styled.main`
     margin-left: 240px;
     padding: 32px 40px;
     transition: all 0.3s ease;
+    
     @media (max-width: 1024px) { 
         margin-left: 0; 
         padding: 12px; 
-        padding-bottom: 90px; /* Space for mobile nav */
+        padding-bottom: 90px;
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
     }
 `;
 
