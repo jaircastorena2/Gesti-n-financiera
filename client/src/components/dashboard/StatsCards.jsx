@@ -5,24 +5,21 @@ function StatsCards({ thisMonthExpenses, totalExpenses, expensesCount, avgPerTra
     const { formatMoney } = useSettings();
 
     const stats = [
-        { icon: '💳', label: 'Gasto Este Mes', value: formatMoney(thisMonthExpenses), badge: 'Este mes', gradient: 'gradient-1' },
-        { icon: '📊', label: 'Total Gastado', value: formatMoney(totalExpenses), badge: 'Histórico', gradient: 'gradient-2' },
-        { icon: '📝', label: 'Transacciones', value: expensesCount, badge: 'Total', gradient: 'gradient-3' },
-        { icon: '📈', label: 'Promedio', value: formatMoney(avgPerTransaction), badge: 'Por gasto', gradient: 'gradient-4' }
+        { icon: '💳', label: 'Mes', value: formatMoney(thisMonthExpenses), gradient: 'gradient-1' },
+        { icon: '📊', label: 'Total', value: formatMoney(totalExpenses), gradient: 'gradient-2' },
+        { icon: '📝', label: 'Txns', value: expensesCount, gradient: 'gradient-3' },
+        { icon: '📈', label: 'Prom', value: formatMoney(avgPerTransaction), gradient: 'gradient-4' }
     ];
 
     return (
         <StatsRow>
             {stats.map((stat, i) => (
                 <StatCard key={i} className={stat.gradient}>
-                    <div className="stat-content">
-                        <div className="stat-icon">{stat.icon}</div>
-                        <div className="stat-details">
-                            <span className="label">{stat.label}</span>
-                            <span className="value">{stat.value}</span>
-                        </div>
+                    <span className="stat-icon">{stat.icon}</span>
+                    <div className="stat-details">
+                        <span className="label">{stat.label}</span>
+                        <span className="value">{stat.value}</span>
                     </div>
-                    <div className="stat-badge">{stat.badge}</div>
                 </StatCard>
             ))}
         </StatsRow>
@@ -32,62 +29,77 @@ function StatsCards({ thisMonthExpenses, totalExpenses, expensesCount, avgPerTra
 const StatsRow = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    margin-bottom: 28px;
-    @media (max-width: 1200px) { grid-template-columns: repeat(2, 1fr); }
+    gap: 16px;
+    margin-bottom: 24px;
+    width: 100%;
+    max-width: 100%;
+    
+    @media (max-width: 1200px) { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    
     @media (max-width: 640px) { 
         grid-template-columns: repeat(2, 1fr); 
-        gap: 10px;
-        margin-bottom: 16px;
+        gap: 8px;
+        margin-bottom: 12px;
     }
 `;
 
 const StatCard = styled.div`
     background: var(--cardBg);
     border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 24px;
-    position: relative;
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
     transition: all 0.3s;
+    min-width: 0;
+    overflow: hidden;
 
-    &.gradient-1 { border-top: 3px solid #8b5cf6; }
-    &.gradient-2 { border-top: 3px solid #06b6d4; }
-    &.gradient-3 { border-top: 3px solid #ec4899; }
-    &.gradient-4 { border-top: 3px solid #f59e0b; }
+    &.gradient-1 { border-left: 3px solid #8b5cf6; }
+    &.gradient-2 { border-left: 3px solid #06b6d4; }
+    &.gradient-3 { border-left: 3px solid #ec4899; }
+    &.gradient-4 { border-left: 3px solid #f59e0b; }
 
-    &:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+    .stat-icon { 
+        font-size: 24px; 
+        flex-shrink: 0;
+    }
     
-    .stat-content { display: flex; align-items: flex-start; gap: 16px; }
-    .stat-icon { font-size: 28px; }
-    .stat-details { display: flex; flex-direction: column; gap: 6px; }
-    .label { font-size: 13px; color: var(--textMuted); font-weight: 500; }
-    .value { font-size: 26px; font-weight: 700; color: var(--text); }
-    .stat-badge { 
-        position: absolute; 
-        top: 20px; 
-        right: 20px; 
-        padding: 4px 10px; 
-        background: var(--bgTertiary); 
-        border-radius: 20px; 
+    .stat-details { 
+        display: flex; 
+        flex-direction: column; 
+        gap: 2px;
+        min-width: 0;
+        overflow: hidden;
+    }
+    
+    .label { 
         font-size: 11px; 
         color: var(--textMuted); 
         font-weight: 500; 
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    .value { 
+        font-size: 18px; 
+        font-weight: 700; 
+        color: var(--text);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
-    @media (max-width: 480px) {
-        padding: 18px;
-        border-radius: 16px;
+    @media (max-width: 640px) {
+        padding: 10px;
+        border-radius: 12px;
+        gap: 8px;
         
-        .stat-icon { font-size: 22px; }
-        .stat-content { gap: 12px; }
-        .label { font-size: 12px; }
-        .value { font-size: 20px; }
-        .stat-badge { 
-            top: 14px; 
-            right: 14px; 
-            padding: 3px 8px;
-            font-size: 10px;
-        }
+        .stat-icon { font-size: 18px; }
+        .label { font-size: 9px; }
+        .value { font-size: 14px; }
     }
 `;
 

@@ -138,7 +138,14 @@ const ChartsRow = styled.div`
     grid-template-columns: 1fr 1.5fr;
     gap: 24px;
     margin-bottom: 28px;
-    @media (max-width: 1024px) { grid-template-columns: 1fr; }
+    width: 100%;
+    max-width: 100%;
+    
+    @media (max-width: 1024px) { 
+        grid-template-columns: 1fr; 
+        gap: 16px;
+        margin-bottom: 16px;
+    }
 `;
 
 const ChartCard = styled.div`
@@ -146,6 +153,13 @@ const ChartCard = styled.div`
     border: 1px solid var(--border);
     border-radius: 20px;
     padding: 24px;
+    max-width: 100%;
+    overflow: hidden;
+    
+    @media (max-width: 640px) {
+        padding: 12px;
+        border-radius: 14px;
+    }
     
     .card-header { 
         display: flex; 
