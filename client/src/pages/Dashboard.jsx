@@ -7,6 +7,7 @@ import { useSettings } from '../context/SettingsContext';
 // Dashboard Components
 import {
     Sidebar,
+    MobileNav,
     StatsCards,
     FiltersBar,
     ChartsSection,
@@ -336,6 +337,12 @@ function Dashboard() {
                     onClose={() => setShowGoalModal(false)}
                 />
             )}
+
+            {/* Mobile Navigation */}
+            <MobileNav
+                activeSection={activeSection}
+                setActiveSection={setActiveSection}
+            />
         </DashboardWrapper>
     );
 }
@@ -374,7 +381,11 @@ const Main = styled.main`
     margin-left: 240px;
     padding: 32px 40px;
     transition: all 0.3s ease;
-    @media (max-width: 1024px) { margin-left: 0; padding: 20px; }
+    @media (max-width: 1024px) { 
+        margin-left: 0; 
+        padding: 20px; 
+        padding-bottom: 100px; /* Space for mobile nav */
+    }
 `;
 
 const Header = styled.header`

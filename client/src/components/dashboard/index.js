@@ -1,5 +1,6 @@
 // Dashboard Components - Barrel Export
 export { default as Sidebar } from './Sidebar';
+export { default as MobileNav } from './MobileNav';
 export { default as StatsCards } from './StatsCards';
 export { default as FiltersBar } from './FiltersBar';
 export { default as ChartsSection } from './ChartsSection';
