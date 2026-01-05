@@ -6,8 +6,12 @@ const cors = require('cors');
 const authRoutes = require('./routes/auth.routes');
 const expenseRoutes = require('./routes/expense.routes');
 const categoryRoutes = require('./routes/category.routes');
+const initDatabase = require('./config/initDb');
 
 const app = express();
+
+// Initialize database tables
+initDatabase();
 
 // Middleware
 app.use(cors());
