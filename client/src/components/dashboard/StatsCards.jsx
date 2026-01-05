@@ -69,6 +69,22 @@ const StatCard = styled.div`
         color: var(--textMuted); 
         font-weight: 500; 
     }
+
+    @media (max-width: 480px) {
+        padding: 18px;
+        border-radius: 16px;
+        
+        .stat-icon { font-size: 22px; }
+        .stat-content { gap: 12px; }
+        .label { font-size: 12px; }
+        .value { font-size: 20px; }
+        .stat-badge { 
+            top: 14px; 
+            right: 14px; 
+            padding: 3px 8px;
+            font-size: 10px;
+        }
+    }
 `;
 
 export default StatsCards;

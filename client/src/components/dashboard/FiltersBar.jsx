@@ -110,6 +110,22 @@ const FiltersRow = styled.div`
 
     @media (max-width: 768px) {
         .search-box { max-width: none; order: -1; width: 100%; }
+        .filter-btn {
+            padding: 8px 12px;
+            font-size: 12px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .filter-btn {
+            padding: 6px 10px;
+            font-size: 11px;
+            border-radius: 8px;
+        }
+        .search-box input {
+            padding: 10px 14px 10px 40px;
+            font-size: 13px;
+        }
     }
 `;
 
