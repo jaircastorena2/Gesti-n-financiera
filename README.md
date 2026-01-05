@@ -1,71 +1,44 @@
-# 💰 Gestión Financiera - Dashboard de Gastos Personales
-
-<div align="center">
-
-![React](https://img.shields.io/badge/React-18.2-61DAFB?style=for-the-badge&logo=react&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=for-the-badge&logo=node.js&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-5.0-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+# Gestión Financiera - Dashboard de Gastos Personales
 
 **Una aplicación Full Stack moderna para gestionar tus finanzas personales**
 
-[Demo en Vivo](#) | [Reportar Bug](../../issues) | [Solicitar Feature](../../issues)
-
-</div>
+**Demo en Vivo:** [https://gesti-n-financiera-euzp.vercel.app](https://gesti-n-financiera-euzp.vercel.app)
 
 ---
 
-## 📸 Capturas de Pantalla
+## Características
 
-### Dashboard Principal
-Vista general con estadísticas, gráficos interactivos y transacciones recientes.
-
-### Multi-Tema
-Soporte para 3 temas: **Oscuro**, **Lavanda** y **Atardecer**.
-
-### Reportes Mensuales
-Análisis detallado de gastos por mes con comparativas visuales.
-
----
-
-## ✨ Características
-
-- 🔐 **Autenticación JWT** - Registro y login seguro
-- 📊 **Dashboard Interactivo** - Visualización de gastos con gráficos dinámicos (Pie, Donut, Barras, Área)
-- 🎨 **Multi-Tema** - 3 temas disponibles (Oscuro, Lavanda, Atardecer)
-- 💱 **Multi-Moneda** - Soporte para MXN, USD y EUR
-- 📅 **Filtros Avanzados** - Filtrar por fecha y buscar transacciones
-- 📈 **Reportes Mensuales** - Análisis detallado por mes
-- 🎯 **Metas de Ahorro** - Establece y rastrea objetivos financieros
-- ⚙️ **Configuración** - Personaliza tu experiencia
-- 📱 **Responsive** - Funciona en desktop, tablet y móvil
+- **Autenticación JWT** - Registro y login seguro
+- **Dashboard Interactivo** - Visualización de gastos con gráficos dinámicos (Pie, Donut, Barras, Área)
+- **Multi-Tema** - 3 temas disponibles (Oscuro, Lavanda, Atardecer)
+- **Multi-Moneda** - Soporte para MXN, USD y EUR
+- **Filtros Avanzados** - Filtrar por fecha y buscar transacciones
+- **Reportes Mensuales** - Análisis detallado por mes
+- **Metas de Ahorro** - Establece y rastrea objetivos financieros
+- **Responsive** - Funciona en desktop, tablet y móvil
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
-| Tecnología | Uso |
-|------------|-----|
-| React 18 | UI Framework |
-| Vite | Build Tool |
-| Styled Components | Estilos CSS-in-JS |
-| Recharts | Gráficos |
-| React Router | Navegación SPA |
-| Axios | Cliente HTTP |
+- React 18
+- Vite
+- Styled Components
+- Recharts
+- React Router
+- Axios
 
 ### Backend
-| Tecnología | Uso |
-|------------|-----|
-| Node.js | Runtime |
-| Express | Framework HTTP |
-| MySQL | Base de Datos |
-| JWT | Autenticación |
-| bcryptjs | Hash de contraseñas |
+- Node.js
+- Express
+- MySQL
+- JWT
+- bcryptjs
 
 ---
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 gastos-portfolio-mvp/
@@ -74,47 +47,33 @@ gastos-portfolio-mvp/
 │       ├── components/        # Componentes reutilizables
 │       │   └── dashboard/     # Componentes del dashboard
 │       ├── context/           # React Context (Auth, Theme, Settings)
-│       ├── hooks/             # Custom hooks
 │       ├── pages/             # Páginas (Login, Register, Dashboard)
 │       └── services/          # API services
 │
-├── server/                    # Backend Node.js
-│   ├── config/               # Configuración BD
-│   ├── controllers/          # Lógica de negocio
-│   ├── middleware/           # Auth middleware
-│   ├── models/               # Modelos de datos
-│   ├── routes/               # Rutas API
-│   └── schema.sql            # Esquema de BD
-│
-└── README.md
+└── server/                    # Backend Node.js
+    ├── config/               # Configuración BD
+    ├── controllers/          # Lógica de negocio
+    ├── middleware/           # Auth middleware
+    ├── routes/               # Rutas API
+    └── index.js              # Entry point
 ```
 
 ---
 
-## 🚀 Instalación
+## Instalación Local
 
 ### Requisitos Previos
 - Node.js 18+
-- MySQL 8+ (o XAMPP)
+- MySQL 8+
 
-### 1️⃣ Clonar el Repositorio
-
-```bash
-git clone https://github.com/jaircastorena2/gestion-financiera.git
-cd gestion-financiera
-```
-
-### 2️⃣ Configurar Base de Datos
+### 1. Clonar el Repositorio
 
 ```bash
-# Importar esquema en MySQL
-mysql -u root -p < server/schema.sql
-
-# (Opcional) Importar datos de ejemplo
-mysql -u root -p expense_dashboard < server/demo-seed.sql
+git clone https://github.com/jaircastorena2/Gesti-n-financiera.git
+cd Gesti-n-financiera
 ```
 
-### 3️⃣ Configurar Backend
+### 2. Configurar Backend
 
 ```bash
 cd server
@@ -123,7 +82,7 @@ npm install             # Instalar dependencias
 npm run dev             # Iniciar servidor (puerto 5000)
 ```
 
-### 4️⃣ Configurar Frontend
+### 3. Configurar Frontend
 
 ```bash
 cd client
@@ -133,9 +92,9 @@ npm run dev             # Iniciar cliente (puerto 5173)
 
 ---
 
-## 🔑 Cuenta Demo
+## Cuenta Demo
 
-Para probar la aplicación sin registrarte:
+Para probar la aplicación:
 
 | Campo | Valor |
 |-------|-------|
@@ -144,7 +103,7 @@ Para probar la aplicación sin registrarte:
 
 ---
 
-## 📡 API Endpoints
+## API Endpoints
 
 ### Autenticación
 ```
@@ -169,25 +128,22 @@ GET    /api/categories      - Listar categorías
 
 ---
 
-## 🎨 Temas Disponibles
+## Despliegue
 
-| Tema | Descripción |
-|------|-------------|
-| 🌑 Oscuro | Modo oscuro elegante con acentos cyan |
-| 💜 Lavanda | Tema claro con tonos púrpura |
-| 🌅 Atardecer | Tonos cálidos oscuros |
+| Servicio | Plataforma |
+|----------|------------|
+| Frontend | Vercel |
+| Backend | Render |
+| Base de Datos | Railway (MySQL) |
 
 ---
 
-## 👤 Autor
+## Autor
 
 **Carlos Jair Castorena**
 
-[![GitHub](https://img.shields.io/badge/GitHub-@jaircastorena2-181717?style=flat&logo=github)](https://github.com/jaircastorena2)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-carlos--jair--castorena-0A66C2?style=flat&logo=linkedin)](https://linkedin.com/in/carlos-jair-castorena)
-
 ---
 
-## 📝 Licencia
+## Licencia
 
-Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+Este proyecto está bajo la Licencia MIT.

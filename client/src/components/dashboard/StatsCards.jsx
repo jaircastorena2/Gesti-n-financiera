@@ -5,10 +5,10 @@ function StatsCards({ thisMonthExpenses, totalExpenses, expensesCount, avgPerTra
     const { formatMoney } = useSettings();
 
     const stats = [
-        { icon: '💳', label: 'Mes', value: formatMoney(thisMonthExpenses), gradient: 'gradient-1' },
+        { icon: '💳', label: 'Este Mes', value: formatMoney(thisMonthExpenses), gradient: 'gradient-1' },
         { icon: '📊', label: 'Total', value: formatMoney(totalExpenses), gradient: 'gradient-2' },
-        { icon: '📝', label: 'Txns', value: expensesCount, gradient: 'gradient-3' },
-        { icon: '📈', label: 'Prom', value: formatMoney(avgPerTransaction), gradient: 'gradient-4' }
+        { icon: '📝', label: 'Gastos', value: expensesCount, gradient: 'gradient-3' },
+        { icon: '📈', label: 'Promedio', value: formatMoney(avgPerTransaction), gradient: 'gradient-4' }
     ];
 
     return (
