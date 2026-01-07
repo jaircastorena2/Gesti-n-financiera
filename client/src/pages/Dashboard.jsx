@@ -192,7 +192,19 @@ function Dashboard() {
             <LoadingWrapper>
                 <div className="loader">
                     <div className="spinner"></div>
-                    <p>Cargando...</p>
+                    <div className="loading-content">
+                        <h2>⚡ Iniciando servidor</h2>
+                        <p className="loading-main">Conectando con el backend...</p>
+                        <p className="loading-note">
+                            Este proyecto usa hosting gratuito.<br />
+                            La primera carga puede tomar 30-60 segundos.
+                        </p>
+                        <div className="loading-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
                 </div>
             </LoadingWrapper>
         );
@@ -355,18 +367,81 @@ const LoadingWrapper = styled.div`
     justify-content: center;
     background: var(--bg);
 
-    .loader { text-align: center; }
+    .loader { 
+        text-align: center;
+        padding: 40px;
+    }
+    
     .spinner {
-        width: 50px;
-        height: 50px;
-        border: 3px solid var(--border);
+        width: 60px;
+        height: 60px;
+        border: 4px solid var(--border);
         border-top-color: var(--accent);
         border-radius: 50%;
         animation: spin 1s linear infinite;
-        margin: 0 auto 16px;
+        margin: 0 auto 24px;
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(99, 102, 241, 0.1));
     }
-    p { color: var(--textMuted); }
-    @keyframes spin { to { transform: rotate(360deg); } }
+    
+    .loading-content {
+        h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+        
+        .loading-main {
+            font-size: 16px;
+            color: var(--textMuted);
+            margin-bottom: 16px;
+        }
+        
+        .loading-note {
+            font-size: 13px;
+            color: var(--textMuted);
+            opacity: 0.7;
+            line-height: 1.6;
+            padding: 12px 20px;
+            background: var(--card);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 20px;
+        }
+        
+        .loading-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            
+            span {
+                width: 10px;
+                height: 10px;
+                background: var(--accent);
+                border-radius: 50%;
+                animation: bounce 1.4s infinite ease-in-out both;
+                
+                &:nth-child(1) { animation-delay: -0.32s; }
+                &:nth-child(2) { animation-delay: -0.16s; }
+                &:nth-child(3) { animation-delay: 0s; }
+            }
+        }
+    }
+    
+    @keyframes spin { 
+        to { transform: rotate(360deg); } 
+    }
+    
+    @keyframes bounce {
+        0%, 80%, 100% { 
+            transform: scale(0.6);
+            opacity: 0.5;
+        }
+        40% { 
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
 `;
 
 const DashboardWrapper = styled.div`
